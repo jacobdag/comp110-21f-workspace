@@ -1,6 +1,6 @@
 """Bool numeric comparisons."""
 
-_author_ = "730386191"
+__author__ = "730386191"
 
 left_hand_side: int = int(input("Left-hand side: "))
 right_hand_side: int = int(input("Right-hand side: "))
