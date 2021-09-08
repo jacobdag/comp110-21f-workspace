@@ -1,5 +1,6 @@
 """Practice."""
 
+
 __author__ = "730386191"
 
 choice: int = int(input("Enter a number: "))
