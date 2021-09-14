@@ -9,6 +9,7 @@ depth_two: int = depth
 i: int = 0
 counter: int = 0
 
+
 while counter < depth_two:
     print(TREE * int((depth - depth_two) + 1))
     depth = depth + 1
