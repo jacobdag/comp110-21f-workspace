@@ -7,6 +7,12 @@ player: str = input("Hello, what is your name? ")
 points = int()
 
 
+def main() -> None:
+    """Entry."""
+    greet()
+    loop()
+
+
 def greet() -> None:
     """Greet."""
     global player
@@ -17,12 +23,6 @@ def greet() -> None:
     print("- You will enter your guess by typing it when prompted.")
     print("- The number of correct guesses in a row will be tallied.")
     print(f"- Try and quit with the highest streak possible. Like all gambling, this is a game of risks {emoji_one}!!!")
-
-
-def main() -> None:
-    """Entry."""
-    greet()
-    loop()
 
 
 def loop() -> None:
