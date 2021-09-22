@@ -21,8 +21,14 @@ def greet() -> None:
 
 def main() -> None:
     """Entry."""
+    greet()
+    loop()
+
+
+def loop() -> None:
+    """loop."""
     global player
-    name: str = player
+    name = player
     guess_loop: int = int(input(f"{name}, to guess from 1-3, type '3'. To guess from 10-20, type '10'. To quit, enter '0'. Good luck {name}!: "))
     if guess_loop == 3:    
         x: int = (int(input(("Enter a number from 1-3 to guess: "))))
@@ -42,11 +48,11 @@ def guess(x: int) -> None:
         global points
         points = points + 1
         print(f"Correct, you have guessed {points} in a row!!!")
-        main()
+        loop()
     else:
         print(f"{x} is wrong, the answer was {answer}. You have no guessing streak")
         points = 0
-        main()
+        loop()
 
 
 def guess_ten(y: int) -> None:
@@ -57,11 +63,11 @@ def guess_ten(y: int) -> None:
         global points
         points = points + 1
         print(f"Correct, you have guessed {points} in a row!!!")
-        main()
+        loop()
     else:
         print(f"{y} is wrong, the answer was {answer}. You have no guessing streak!!!")
         points = 0
-        main()
+        loop()
 
 
 def ending(points: int) -> None:   
@@ -75,5 +81,4 @@ def ending(points: int) -> None:
 
 
 if __name__ == "__main__":
-    greet()
     main()
