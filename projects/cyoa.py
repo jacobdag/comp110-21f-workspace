@@ -7,12 +7,6 @@ player: str = input("Hello, what is your name? ")
 points = int()
 
 
-def main() -> None:
-    """Entry."""
-    greet()
-    loop()
-
-
 def greet() -> None:
     """Greet."""
     global player
@@ -25,10 +19,10 @@ def greet() -> None:
     print(f"- Try and quit with the highest streak possible. Like all gambling, this is a game of risks {emoji_one}!!!")
 
 
-def loop() -> None:
-    """loop."""
+def main() -> None:
+    """Entry."""
     global player
-    name = player
+    name: str = player
     guess_loop: int = int(input(f"{name}, to guess from 1-3, type '3'. To guess from 10-20, type '10'. To quit, enter '0'. Good luck {name}!: "))
     if guess_loop == 3:    
         x: int = (int(input(("Enter a number from 1-3 to guess: "))))
@@ -48,11 +42,11 @@ def guess(x: int) -> None:
         global points
         points = points + 1
         print(f"Correct, you have guessed {points} in a row!!!")
-        loop()
+        main()
     else:
         print(f"{x} is wrong, the answer was {answer}. You have no guessing streak")
         points = 0
-        loop()
+        main()
 
 
 def guess_ten(y: int) -> None:
@@ -63,11 +57,11 @@ def guess_ten(y: int) -> None:
         global points
         points = points + 1
         print(f"Correct, you have guessed {points} in a row!!!")
-        loop()
+        main()
     else:
         print(f"{y} is wrong, the answer was {answer}. You have no guessing streak!!!")
         points = 0
-        loop()
+        main()
 
 
 def ending(points: int) -> None:   
@@ -81,4 +75,5 @@ def ending(points: int) -> None:
 
 
 if __name__ == "__main__":
+    greet()
     main()
