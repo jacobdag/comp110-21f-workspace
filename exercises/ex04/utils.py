@@ -1,6 +1,6 @@
 """List utility functions."""
 
-__author__ = "123456789"
+__author__ = "730386191"
 
 
 def all(numbers: list[int], search: int) -> bool:
