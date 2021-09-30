@@ -22,9 +22,9 @@ def is_equal(group: list[int], group_two: list[int]) -> bool:
     i: int = 0
     counter: int = 0
     while i < len(group) and len(group_two):
-        i += 1
-        if group == group_two:
+        if group[i] == group_two[i]:
             counter += 1
+        i += 1
     if counter == i:
         return True
     return False
@@ -34,10 +34,17 @@ def max(input: list[int]) -> int:
     """Returns max number."""
     if len(input) == 0:
         raise ValueError("max() arg is an empty list")
-    i: int = 0
-    while i < len(input):
-        label: int = input[i]
-        i += 1
-        if label >= input[i]:
-            maximum: int = label
-    return maximum
+    else:
+        i: int = 0
+        maximum: int = 0
+        while i < (len(input) - 1):
+            item: int = input[i]
+            item_two: int = (input[i + 1])
+            if item <= item_two and item_two >= input[0]:
+                maximum: int = item_two
+            else:
+                maximum: int = input[0]
+            if item == maximum:
+                maximum: int = item
+            i += 1
+    return (maximum)
