@@ -22,7 +22,7 @@ def is_equal(group: list[int], group_two: list[int]) -> bool:
     """True if matching lists."""
     i: int = 0
     counter: int = 0
-    while i < len(group) and len(group_two):
+    while i <= len(group) and len(group_two):
         if group[i] == group_two[i]:
             counter += 1
         i += 1
