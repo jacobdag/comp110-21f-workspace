@@ -25,9 +25,10 @@ def is_equal(group: list[int], group_two: list[int]) -> bool:
         if group[i] == group_two[i]:
             counter += 1
         i += 1
-    if counter == i:
+    if counter == i and len(group) == len(group_two):
         return True
-    return False
+    else:
+        return False
 
 
 def max(input: list[int]) -> int:
@@ -41,10 +42,10 @@ def max(input: list[int]) -> int:
             item: int = input[i]
             item_two: int = (input[i + 1])
             if item <= item_two and item_two >= input[0]:
-                maximum: int = item_two
+                maximum = item_two
             else:
-                maximum: int = input[0]
+                maximum = input[0]
             if item == maximum:
-                maximum: int = item
+                maximum = item
             i += 1
     return (maximum)
