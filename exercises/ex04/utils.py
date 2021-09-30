@@ -26,7 +26,7 @@ def is_equal(group: list[int], group_two: list[int]) -> bool:
         i += 1
         if group == group_two:
             counter += 1
-    if counter == i:
+    if counter == i and len(group) == len(group_two):
         return True
     return False
 
