@@ -22,14 +22,13 @@ def is_equal(group: list[int], group_two: list[int]) -> bool:
     """True if matching lists."""
     i: int = 0
     counter: int = 0
-    while i <= len(group) and len(group_two):
-        if group[i] == group_two[i]:
-            counter += 1
+    while i < len(group) and len(group_two):
         i += 1
-    if counter == i and len(group) == len(group_two):
+        if group == group_two:
+            counter += 1
+    if counter == i:
         return True
-    else:
-        return False
+    return False
 
 
 def max(input: list[int]) -> int:
