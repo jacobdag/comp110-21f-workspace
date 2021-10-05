@@ -28,6 +28,7 @@ def sub(a_list: list[int], x: int, y: int) -> list[int]:
 
 
 def concat(a_list: list[int], b_list: list[int]) -> list[int]:
+    """Retruns lists together."""
     new_list: list[int] = []
     for item in a_list:
         new_list.append(item)
