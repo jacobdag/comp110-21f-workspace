@@ -25,10 +25,11 @@ def favorite_color(colors: dict[str, str]) -> str:
         while i < len(list_key) - 1:
             if list_key[i] == item:
                 count += 1
-                i += 1
+                
                 if count >= maximum:
                     maximum = count
                     final_max = item
+            i += 1
     return(final_max)        
 
 
