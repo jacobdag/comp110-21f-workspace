@@ -69,6 +69,7 @@ def guess_ten(y: int, name: str) -> None:
 
 
 def ending(points: int) -> None:   
+    """End program."""
     emoji_two: str = "\U0001F928"
     emoji_three: str = "\U0001F61E"
     emoji_four: str = "\U0001F60E"
