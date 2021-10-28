@@ -3,8 +3,8 @@
 __author__ = "730386191"
 
 
-player = str 
-points = int(0)
+player: str 
+points: int
 counter = 0
 
 
