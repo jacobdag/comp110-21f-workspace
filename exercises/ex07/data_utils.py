@@ -71,7 +71,7 @@ def concat(dict_one: dict[str, list[str]], dict_two: dict[str, list[str]]) -> di
 
 def count(listing: list[str]) -> dict[str, int]:
     """Simple Analysis."""
-    result_dict = dict()
+    result_dict: dict[str, int] = dict()
     for item in listing:
         if item in result_dict:
             result_dict[item] += 1
