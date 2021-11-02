@@ -35,18 +35,34 @@ def columnar(row_table: list[dict[str, str]]) -> dict[str, list[str]]:
 
 def head(columns: dict[str, list[str]], n: int) -> dict[str, list[str]]:
     """Produce first columns."""
-    final_dict: dict[str, list[str]] = dict()
-    for item in columns:
-        final_list = []
-        final_list.append(columns[item][n])
-        final_dict[item] = final_list
+    final_dict = dict()
+    i: int = 0
+    while i < n:
+        for item in columns:
+            final_list = []                
+            for row in columns:  
+                final_list.append(columns[item][i])
+                final_dict[item] = final_list
+            i += 1
     return(final_dict)
         
 
 def select(first_dict: dict[str, list[str]], first_list: list[str]) -> dict[str, list[str]]:
     """Produces specific set of columns."""
-    final_dict: dict[str, list[str]] = dict()
+    final_dict = dict()
     for item in first_list:
         final_dict[item] = first_dict[item]
     return(final_dict)
         
+
+def concat(dict_one: dict[str, list[str]], dict_two: dict[str, list[str]]) -> dict[str, list[str]]:
+    end_dict = dict()
+    for item in dict_one:
+        end_dict[item] = dict_one[item]
+    for items in dict_two:
+        if items in end_dict:
+            for value in dict_two:
+                end_dict[items] = dict_two[value]
+        else: 
+            end_dict[value] = dict_two[value]
+    return(end_dict)
