@@ -67,3 +67,13 @@ def concat(dict_one: dict[str, list[str]], dict_two: dict[str, list[str]]) -> di
         else: 
             end_dict[value] = dict_two[value]
     return(end_dict)
+
+
+def count(listing: list[str]) -> dict[str, int]:
+    result_dict = dict()
+    for item in listing:
+        if item in result_dict:
+            result_dict[item] += 1
+        else:
+            result_dict[item] = 1
+    return(result_dict)
