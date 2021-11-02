@@ -37,13 +37,13 @@ def head(columns: dict[str, list[str]], n: int) -> dict[str, list[str]]:
     """Produce first columns."""
     final_dict = dict()
     i: int = 0
-    while i < n:
-        for item in columns:
-            final_list = []                
-            for row in columns:  
+    for item in columns:
+        final_list = []  
+        for row in columns: 
+            while i < n:               
                 final_list.append(columns[item][i])
-                final_dict[item] = final_list
-            i += 1
+                i += 1
+            final_dict[item] = final_list        
     return(final_dict)
         
 
@@ -56,6 +56,7 @@ def select(first_dict: dict[str, list[str]], first_list: list[str]) -> dict[str,
         
 
 def concat(dict_one: dict[str, list[str]], dict_two: dict[str, list[str]]) -> dict[str, list[str]]:
+    """Combine columns."""
     end_dict = dict()
     for item in dict_one:
         end_dict[item] = dict_one[item]
