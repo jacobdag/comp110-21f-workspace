@@ -34,19 +34,19 @@ def columnar(row_table: list[dict[str, str]]) -> dict[str, list[str]]:
 
 
 def head(columns: dict[str, list[str]], n: int) -> dict[str, list[str]]:
+    """Produce first columns."""
     final_dict: dict[str, list[str]] = dict()
-    i: int = 0
-    table: list[str] = []
     for item in columns:
-        while i < n:
-            table.append(item)
-            final_dict[item] = table
-            i += 1
+        final_list = []
+        final_list.append(columns[item][n])
+        final_dict[item] = final_list
     return(final_dict)
-    
+        
 
 def select(first_dict: dict[str, list[str]], first_list: list[str]) -> dict[str, list[str]]:
+    """Produces specific set of columns."""
     final_dict: dict[str, list[str]] = dict()
     for item in first_list:
-        final_dict[item] = first_list
+        final_dict[item] = first_dict[item]
     return(final_dict)
+        
