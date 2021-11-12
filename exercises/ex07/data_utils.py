@@ -36,14 +36,11 @@ def columnar(row_table: list[dict[str, str]]) -> dict[str, list[str]]:
 def head(columns: dict[str, list[str]], n: int) -> dict[str, list[str]]:
     """Produce first columns."""
     final_dict = dict()
-    i: int = 0
     for item in columns:
         final_list = []  
-        for row in columns: 
-            while i < n:               
-                final_list.append(columns[item][i])
-                i += 1
-            final_dict[item] = final_list        
+        for row in range(n):             
+            final_list.append(columns[item][n])
+        final_dict[item] = final_list        
     return(final_dict)
         
 
