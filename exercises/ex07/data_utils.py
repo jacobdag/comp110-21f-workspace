@@ -39,7 +39,7 @@ def head(columns: dict[str, list[str]], n: int) -> dict[str, list[str]]:
     for item in columns:
         final_list = []  
         for row in range(n):             
-            final_list.append(columns[item][n])
+            final_list.append(columns[item][row])
         final_dict[item] = final_list        
     return(final_dict)
         
